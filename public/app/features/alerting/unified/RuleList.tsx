@@ -19,6 +19,7 @@ import { ThresholdRules } from './components/rules/ThresholdRules';
 import { useCombinedRuleNamespaces } from './hooks/useCombinedRuleNamespaces';
 import { RULE_LIST_POLL_INTERVAL_MS } from './utils/constants';
 import { isRulerNotSupportedResponse } from './utils/rules';
+import RulesFilter from './components/rules/RulesFilter';
 
 export const RuleList: FC = () => {
   const dispatch = useDispatch();
@@ -116,6 +117,7 @@ export const RuleList: FC = () => {
           ))}
         </InfoBox>
       )}
+      <RulesFilter />
       <div className={styles.buttonsContainer}>
         <div />
         <a href="/alerting/new">
