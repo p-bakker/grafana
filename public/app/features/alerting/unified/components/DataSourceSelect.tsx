@@ -44,7 +44,7 @@ const useDatasourceSelectOptions = (alertType?: ALERT_TYPE) => {
     if (alertType === ALERT_TYPE.SYSTEM) {
       options = getRulesDataSources();
     } else {
-      options = getAllDataSources().filter(({ type }) => type !== 'datasource');
+      options = getAllDataSources().filter(({ meta }) => meta.alerting);
     }
     setDataSourceOptions(
       options.map(({ name, type }) => {
